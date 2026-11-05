@@ -446,6 +446,7 @@ func (h *Home) updateSizes() {
 		h.feedbackDialog.SetSize(h.width, h.height)
 	}
 	h.reportDialog.SetSize(h.width, h.height)
+	h.whatsNewDialog.SetSize(h.width, h.height)
 	if h.telemetryDialog != nil {
 		h.telemetryDialog.SetSize(h.width, h.height)
 	}
@@ -633,6 +634,9 @@ func (h *Home) renderFrame() string {
 	}
 	if h.reportDialog.IsVisible() {
 		return h.reportDialog.View()
+	}
+	if h.whatsNewDialog.IsVisible() {
+		return h.whatsNewDialog.View()
 	}
 	if h.feedbackDialog.IsVisible() {
 		return h.feedbackDialog.View()
